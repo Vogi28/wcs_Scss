@@ -1,0 +1,28 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin borderRing($size, $type, $color, $rad)
+{
+    border: $size $type $color;
+    border-radius: $rad;
+}
+
+@mixin myShadows($x, $y, $blur, $color) 
+{
+    // text-shadow : $x $y $blur $color;
+    box-shadow : $x/2 $y/2 $blur/2 lighten($color, 50), $x/2 $y/2 $blur/2 lighten($color, 50) inset;   
+       
+
+} 
+
+@mixin ring($size, $color)
+{
+    @for $i from 1 through 6
+    {
+
+    }
+}

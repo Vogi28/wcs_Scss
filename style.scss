@@ -1,0 +1,82 @@
+@import './function';
+@import './variables';
+
+body{
+}
+
+header
+{
+    background-color: $header_bg-color;
+    font-family: $hFont;
+    height: 10vh;
+    @include flexCenter(row);
+    color: antiquewhite;
+    font-size: 2em;
+
+    ul
+    {
+        @include flexCenter(row);
+        list-style: none;
+        li
+        {
+            margin: 5px;
+            padding: 15px;
+        }
+    }
+}
+
+main{
+    font-family: $hFont;
+    background-color: rgb(252, 246, 246);
+    height: 120vh;
+}
+section.title
+{
+    height: $height;
+    @include flexCenter(row);
+    p.title_ring{
+        padding: 20px;
+        margin: 0 20px;
+        @include borderRing(3px, solid, orange, 100%);
+    }
+
+}
+section.the_one_ring
+{
+    @extend section.title;
+    p.middle_ring{
+        padding: 80px;
+        margin: 0 20px;
+        @include borderRing(10px, solid, rgb(253, 242, 85), 100%);
+        @include myShadows(10px, 10px, 7px, black);
+    }
+}
+section.six_rings
+{
+    @extend section.title;
+    @for $i from 1 through 6
+    {
+        .ring#{$i}
+        {
+            padding: $i * 8px;
+            margin: -5px;
+            @include borderRing($i * 1px, solid, rgb(70, 70, 70), 100%);
+        }
+    }
+}
+section.plz_find_it
+{
+    @extend section.title;
+    height: 5vh;
+}
+
+
+footer{
+    background-color: $header_bg-color;
+    font-family: $hFont;
+}
+.row
+{
+    display: flex;
+    flex-direction: row;
+}
